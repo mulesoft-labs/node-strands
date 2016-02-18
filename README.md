@@ -70,7 +70,7 @@ console.log(html.toString())
 
 Simple wrapper function for creating a "template-like function".
 
-**wrap <T> (fn: (t: Strands, data: T) => any): (data: T) => string**
+**wrap <T> (fn: (t: Strands, data: T) => any, options?: Options): (data: T) => string**
 
 ```js
 import { wrap } from 'strands'

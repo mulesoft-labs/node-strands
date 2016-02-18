@@ -103,9 +103,9 @@ export class Strands {
 /**
  * Wrap a template function that generates a string.
  */
-export function wrap <T> (fn: (t: Strands, data: T) => any): (data: T) => string {
+export function wrap <T> (fn: (t: Strands, data: T) => any, options?: Options): (data: T) => string {
   return (data: T) => {
-    const t = new Strands()
+    const t = new Strands(options)
     fn(t, data)
     return t.toString()
   }
