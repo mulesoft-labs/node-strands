@@ -1,0 +1,44 @@
+{
+  "name": "strands",
+  "version": "0.0.0",
+  "description": "Simple, light-weight string building for JavaScript",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\"",
+    "build": "rm -rf dist/ && tsc",
+    "test-spec": "blue-tape -- \"dist/**/*.spec.js\" | tap-spec",
+    "test-cov": "istanbul cover --print none -x \"*.spec.js\" blue-tape \"dist/**/*.spec.js\" | tap-spec",
+    "test": "npm run lint && npm run build && npm run test-cov",
+    "prepublish": "typings install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mulesoft-labs/node-strands.git"
+  },
+  "keywords": [
+    "template",
+    "string",
+    "builder",
+    "concat",
+    "strings"
+  ],
+  "author": "MuleSoft, Inc.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mulesoft-labs/node-strands/issues"
+  },
+  "homepage": "https://github.com/mulesoft-labs/node-strands",
+  "devDependencies": {
+    "blue-tape": "^0.2.0",
+    "istanbul": "^0.4.2",
+    "pre-commit": "^1.0.6",
+    "tap-spec": "^4.1.1",
+    "tslint": "^3.2.0",
+    "typescript": "^1.7.5",
+    "typings": "^0.6.1"
+  }
+}
